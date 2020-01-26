@@ -62,3 +62,90 @@ def cartToPol(a):
     p = modulo(a)
     ang = returnPhase(a)
     return (p,ang)
+
+def sumaVectorial(v1,v2):
+    '''Función que realiza la suma de dos vectores con números complejos
+       (lista,lista)->(lista)'''
+    vector = []
+    for i in range(len(v1)):
+        vector += [suma(v1[i],v2[i])]
+    return vector
+
+def inverso(v1):
+    '''Función que convierte un vector en su inverso
+       (lista)->(lista)'''
+    for i in range(len(v1)):
+        a1 = v1[i][0]*-1
+        b1 = v1[i][1]*-1
+        v1[i] = (a1,b1)
+    return v1
+
+def productoEscalar(c,v1):
+    '''Función que multiplica un número complejo por un
+       vector de números complejos
+       (tupla de float, lista)->(lista)'''
+    vector = []
+    for i in range(len(v1)):
+        vector += [multiplicacion(c,v1[i])]
+    return vector
+
+def sumaMatrices(m1,m2):
+    '''Función que realiza la suma de dos matrices de números complejos
+       (matriz,matriz)->(matriz)'''
+    if len(m1)==len(m2) and len(m1[0])==len(m2[1]):
+        matriz = []
+        for i in range(len(m1)):
+            fila = []
+            for j in range(len(m1[0])):
+                fila += [suma(m1[i][j],m2[i][j])]
+            matriz += [fila]
+            return matriz
+    else:
+        print('Error')
+
+def inversoMatrices(m1):
+    '''Función que convierte una matriz en su inverso
+       (matriz)->(matriz)'''
+    matriz = []
+    for i in range(len(m1)):
+        matriz += [inverso(m1[i])]
+    return matriz
+
+def multEscalarMatriz(c, m1):
+    '''Función que multiplica un número complejo por una
+       matriz de números complejos
+       (tupla de float, matriz)->(matriz)'''
+    matriz = []
+    for i in range(len(m1)):
+        matriz += [productoEscalar(c,m1[i])]
+    return matriz
+
+def transpuesta(m1):
+    '''Función que cambia filas por columnas y hace la matriz transpuesta
+       (matriz)->(matriz)'''
+    matriz = []
+    for i in range(len(m1[0])):
+        fila = []
+        for j in range(len(m1)):
+            fila += [m1[j][i]]
+        matriz += [fila]
+    return matriz
+
+def matrizConjugada(m1):
+    '''Función que convierte cada elemento de la matriz en su conjugado
+       (matriz)->(matriz)'''
+    matriz = []
+    for i in range(len(m1)):
+        fila = []
+        for j in range(len(m1[0])):
+            fila += [conjugado(m1[i][j])]
+        matriz += [fila]
+    return matriz
+
+def matrizAdjunta(m1):
+    '''Función que hace la matriz adjunta
+       (matriz)->(matriz)'''
+    m = matrizConjugada(transpuesta(m1))
+    return m 
+
+
