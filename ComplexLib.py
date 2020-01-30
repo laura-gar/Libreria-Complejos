@@ -158,4 +158,5 @@ def multiplicacionMatrices(m1, m2):
                 matriz[i][j] += m1[i][k] * m2[k][j]
     return matriz
 
-
+def hermitain(m1):
+    return (m1 == matrizAdjunta(m1))
