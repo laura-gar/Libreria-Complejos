@@ -34,7 +34,7 @@ Descarga el repositorio como archivo .zip; en el encontraras tres archivos. Comp
 
 Ten en cuenta que cada fúncion viene con su respectiva documentación. Revisa los tipos de datos de entrada y salida para que no tengas problemas al usarla.
 
-*Desarrollado por Laura García *
+*Desarrollado por Laura García*
 
 
 
