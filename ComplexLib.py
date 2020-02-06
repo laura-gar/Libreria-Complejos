@@ -27,9 +27,6 @@ def multCom(a,b):
     d = a[0]*b[1] + a[1]*b[0]
     return (c,d)
 
-def multRe (a,b):
-    return a*b
-
 def division(a,b):
     '''Función que divide dos números complejos
        (tupla de float,tupla de float) -> (tupla de float)'''
@@ -160,23 +157,26 @@ def multMatCom(m1, m2):
                 matriz[i][j] = suma(matriz[i][j],multCom(m1[i][k],m2[k][j]))
     return matriz
 
-##def multMatRea(m1, m2):
-##    matriz = [[0 for j in range(len(m2[0]))]for i in range(len(m1))]
-##    for i in range(len(m1)):
-##        for j in range(len(m2[0])):
-##            for k in range(len(m2)):
-##                matriz[i][j] += m1[i][k]*m2[k][j]
-##    return matriz
+def multMatRea(m1, m2):
+    matriz = [[0 for j in range(len(m2[0]))]for i in range(len(m1))]
+    for i in range(len(m1)):
+        for j in range(len(m2[0])):
+            for k in range(len(m2)):
+                matriz[i][j] += m1[i][k]*m2[k][j]
+    return matriz
 
-##def innerInt(v1,v2):
-##    res = multMatRea(transpuesta(v1),v2)
-##    return res[0][0]
+def innerInt(v1,v2):
+    res = multMatRea(transpuesta(v1),v2)
+    return res[0][0]
 
 def innerProduct(v1,v2):
     print(matrizAdjunta(v1))
     res = multMatCom(matrizAdjunta(v1),v2)
     return res[0][0]
 
+def normaVector(v1):
+    norma = math.sqrt(innerProduct(v1,v1))
+    return norma
 
 def matrizHermitain(m1):
     return (m1 == matrizAdjunta(m1))
@@ -186,7 +186,7 @@ def matrizUnitary(m1):
     for i in range(len(m1)):
         matId[i][i] = (1,0)
     print(matId)
-    a, b, c = multiplicacionMatrices(m1,matrizAdjunta(m1)),  multiplicacionMatrices(matrizAdjunta(m1),m1), matId
+    a, b, c = multMatCom(m1,matrizAdjunta(m1)),multMatCom(matrizAdjunta(m1),m1), matId
     print(a)
     if a == b == c:
         return True
@@ -198,7 +198,14 @@ def prodTensor(v1,v2):
     pos = 0
     for i in range(len(v1)):
         for j in range(len(v2)):
-            tensor[pos] = multCom(v1[i],v2[j])
+            tensor[pos] = v1[i]*v2[j]
             pos += 1
     return tensor
 
+def prodTensorMatrices(m1,m2):
+    m, mp, n, np = len(m1),len(m1[0]),len(m2), len(m2[0])
+    matriz = [[0 for j in range(mp*np)] for i in range(m*n)]
+    for j in range(m*n):
+        for k in range(mp*np):
+            matriz[j][k] = m1[j//n][k//m] * m2[j%n][k%n]
+    return matriz
