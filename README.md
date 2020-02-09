@@ -26,7 +26,7 @@ Además, cuenta con operaciones entre vectores y matrices de números complejos 
 + Producto de matrices complejas de tamaños compatibles.
 + Acción de una amtriz sobre un vector.
 + Producto interno de dos vectores complejos.
-+ Norma de un vecotr complejo
++ Norma de un vector complejo
 + Distancia entre dos vectores complejos.
 + ¿Es una matriz unitaria?
 + ¿Es una matriz hermitiana?
