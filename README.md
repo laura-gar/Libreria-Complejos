@@ -5,7 +5,7 @@ Este repositorio es una libreria de números complejos desarrollada en Python, d
 La calculadora realiza las siguientes operaciones con números complejos:
 + Suma.
 + Resta.
-+ Multiplicación.
++ Producto.
 + División. 
 + Módulo.
 + Conjugado.
@@ -20,11 +20,17 @@ Además, cuenta con operaciones entre vectores y matrices de números complejos 
 + Suma de matrices complejas.
 + Inverso de matrices complejas.
 + Producto entre un escalar y una matriz compleja.
-+ Transpuesta de una matriz compleja.
-+ Conjugada de una matriz compleja.
-+ Adjunta de una matriz compleja.
-+ Multiplicación de matrices complejas.
-+ Producto interno de vectores complejos.
++ Transpuesta de una matriz o vector complejo.
++ Conjugada de una matriz o vector complejo.
++ Adjunta de una matriz o vector complejo.
++ Producto de matrices complejas de tamaños compatibles.
++ Acción de una amtriz sobre un vector.
++ Producto interno de dos vectores complejos.
++ Norma de un vecotr complejo
++ Distancia entre dos vectores complejos.
++ ¿Es una matriz unitaria?
++ ¿Es una matriz hermitiana?
++ Producto tensor entre dos vectores o matrices.
 
 ## ¿Cómo usar la libreria?
 
