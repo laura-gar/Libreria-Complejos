@@ -1,4 +1,5 @@
 from sys import stdin
+import Graficas
 def mult (matriz, vector):
     v = [0 for i in range(len(matriz))]
     for i in range(len(matriz)):
@@ -18,5 +19,7 @@ def main():
         matrizState[i] = [int(x) for x in stdin.readline().strip().split(' ')]
     state_0 = [int(x) for x in stdin.readline().strip().split(' ')]
     clicks = int(stdin.readline().strip())
-    print(endstate(matrizState,state_0,clicks))
+    final = endstate(matrizState,state_0,clicks)
+    Graficas.graph(final)
+
 main()
