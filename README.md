@@ -1,8 +1,11 @@
 # Libreria de números complejos
 Este repositorio es una libreria de números complejos desarrollada en Python, desarrollada por Laura García.
+Esta libreria se irá actualizando a medida que sea necesario, por cada actualización, se añadira una nueva version en la librería,
+en el ReadMe y en el archivo de pruebas.
 
-## Funcionalidades:
-La calculadora realiza las siguientes operaciones con números complejos:
+## Versión 1
+Incluye las funciones básicas entre números complejos.
+- ## Funcionalidades:
 + Suma.
 + Resta.
 + Producto.
@@ -12,8 +15,9 @@ La calculadora realiza las siguientes operaciones con números complejos:
 + Conversión de coordenadas cartesianas a polares.
 + Retorno de fase de un número complejo.
 
-
-Además, cuenta con operaciones entre vectores y matrices de números complejos como:
+## Versión 2
+Incluye funciones entre vectores y matrices. 
+- ## Funcionalidades:
 + Suma de vectores complejos.
 + Inverso de un vector complejo.
 + Producto entre un escalar y un vector complejo.
@@ -31,6 +35,17 @@ Además, cuenta con operaciones entre vectores y matrices de números complejos 
 + ¿Es una matriz unitaria?
 + ¿Es una matriz hermitiana?
 + Producto tensor entre dos vectores o matrices.
+
+## Versión 3
+En esta versión, se iniciará con las operaciones y simulaciones cuánticas
+- ## Funcionalidades:
++ Simulación experimento cuántico con coeficientes booleanos
++ Simulación experimento cuántico probabilistico
++ Simulación experimento cuántico con números complejos
++ Sistema cuántico de una linea:
+  - Probabilidad de encontrarlo en una posición particular
+  - Encontrrar la probabilidad de transitar de un vector ket a otro
++ 
 
 ## ¿Cómo usar la libreria?
 
