@@ -4,6 +4,7 @@ import numpy
 import math
 import cmath
 def act(matriz, vector):
+    '''Función que calcula la acción de una matriz sobre un vector'''
     v = [(0, 0) for i in range(len(matriz))]
     for i in range(len(matriz)):
         for j in range(len(vector)):
@@ -108,6 +109,7 @@ def eigenVectors(eVector):
 
 
 def convMatriz(m):
+    '''Función que convierte una matriz de tuplas en una matriz de números complejos'''
     m1 = [[0 for j in range(len(m[0]))] for i in range(len(m))]
     for i in range(len(m)):
         for j in range(len(m[0])):
@@ -116,8 +118,8 @@ def convMatriz(m):
 
 
 def prob(matriz, state,):
-    eValues, eVector = reviewObs(matriz, state)
     '''Función que halla la probabilidad de que un estado llegue a un vector propio'''
+    eValues, eVector = reviewObs(matriz, state)
     if expectedValue(matriz, state) in eValues:
         print('Probabilidad de llegar a un vector propio 100%')
     else:
@@ -144,21 +146,3 @@ def dynamic(n, matriz, state):
     for i in range(n):
         state = act(matriz, state)
     return state
-
-def main():
-    m = [[(2,0), (1,1)], [(1,-1),(3,0)]]
-   # m1 = [[complex(2,0),complex(1, 1)],[complex(1,-1),complex(3,0)]]
-    v = [(1/math.sqrt(2),0), (0, 1/math.sqrt(2))]
-    #med_var(m,v)
-    #a = sympy.Matrix(m)
-    #reviewObs(a, v)
-    val, vec = reviewObs(m, v)
-    m = [[(0, 0), (1 / math.sqrt(2), 0), (1 / math.sqrt(2), 0), (0, 0)],
-         [(0, 1 / math.sqrt(2)), (0, 0), (0, 0), (1 / math.sqrt(2), 0)],
-         [(1 / math.sqrt(2), 0), (0, 0), (0, 0), (0, 1 / math.sqrt(2))],
-         [(0, 0), (1 / math.sqrt(2), 0), (-1 / math.sqrt(2), 0), (0, 0)]]
-    v = [(1, 0), (0, 0), (0, 0), (0, 0)]
-
-    print(dynamic(3,m,v))
-
-main()
