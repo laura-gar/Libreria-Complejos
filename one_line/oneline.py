@@ -1,6 +1,7 @@
 from ComplexLib import *
 
 def act(matriz, vector):
+    '''Función que calcula la acción de una matriz sobre un vector'''
     v = [(0, 0) for i in range(len(matriz))]
     for i in range(len(matriz)):
         for j in range(len(vector)):
